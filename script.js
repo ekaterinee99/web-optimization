@@ -1,21 +1,29 @@
-const widthInput = document.getElementById('width');
-const heightInput = document.getElementById('height');
-const calculateButton = document.getElementById('calculateButton');
-const result = document.getElementById('result');
+const image = document.getElementById('galleryImage');
+const toggleButton = document.getElementById('toggleButton');
+const changeButton = document.getElementById('changeButton');
+const imageUrl = document.getElementById('imageUrl');
+const message = document.getElementById('message');
 
-function calculateArea(width, height) {
-  return width * height;
+function toggleImage() {
+  if (image.style.display === 'none') {
+    image.style.display = 'block';
+    toggleButton.textContent = 'დამალვა';
+  } else {
+    image.style.display = 'none';
+    toggleButton.textContent = 'ჩვენება';
+  }
 }
 
-calculateButton.addEventListener('click', () => {
-  const width = Number(widthInput.value);
-  const height = Number(heightInput.value);
-
-  if (width <= 0 || height <= 0 || !widthInput.value || !heightInput.value) {
-    result.textContent = 'Please enter valid positive numbers.';
-    return;
+function changeImage() {
+  const url = imageUrl.value.trim();
+  if (url) {
+    image.src = url;
+    image.style.display = 'block';
+    message.textContent = 'სურათი შეიცვალა!';
+  } else {
+    message.textContent = 'გთხოვ, ჩასვი სურათის URL.';
   }
+}
 
-  const area = calculateArea(width, height);
-  result.textContent = `Area: ${area} square units`;
-});
+toggleButton.addEventListener('click', toggleImage);
+changeButton.addEventListener('click', changeImage);
