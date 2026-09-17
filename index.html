@@ -1,53 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ka">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Optimized landing page for a web performance exam.">
-  <title>Optimize — Landing Page</title>
+  <title>სურათების გალერეა</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="header">
-    <a class="logo" href="#home">Optimize</a>
-    <nav aria-label="Main navigation">
-      <a href="#features">Features</a>
-      <a href="#calculator">Calculator</a>
-    </nav>
-  </header>
-
-  <main id="home">
-    <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">Fast. Simple. Responsive.</p>
-        <h1>Build a faster web experience.</h1>
-        <p class="hero-text">A clean landing page demonstrating image optimization, JavaScript debugging and responsive design.</p>
-        <a class="button" href="#calculator">Try the calculator</a>
-      </div>
-      <div class="hero-image-wrap">
-        <img class="hero-image" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=75" alt="Modern bright workspace" width="1000" height="750" loading="lazy">
-      </div>
+  <main class="container">
+    <h1>სურათების გალერეა</h1>
+    <section class="gallery" aria-label="სურათები">
+      <img id="galleryImage" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900" alt="ბუნების სურათი">
     </section>
-
-    <section class="features" id="features">
-      <article class="feature-card"><h2>Performance</h2><p>Compressed images, deferred JavaScript and lightweight structure.</p></article>
-      <article class="feature-card"><h2>Debugging</h2><p>A working calculator with clear input validation and readable code.</p></article>
-      <article class="feature-card"><h2>Responsive</h2><p>Flexible layouts that fit desktop, tablet and 375px mobile screens.</p></article>
-    </section>
-
-    <section class="calculator" id="calculator">
-      <h2>Quick area calculator</h2>
-      <p>Enter width and height to calculate the area.</p>
-      <div class="inputs">
-        <label>Width <input id="width" type="number" min="0" placeholder="Width"></label>
-        <label>Height <input id="height" type="number" min="0" placeholder="Height"></label>
-      </div>
-      <button class="button" id="calculateButton" type="button">Calculate</button>
-      <p id="result" class="result" aria-live="polite">Result will appear here.</p>
-    </section>
+    <div class="buttons">
+      <button id="toggleButton">დამალვა</button>
+      <button id="changeButton">სურათის შეცვლა</button>
+    </div>
+    <label for="imageUrl">ახალი სურათის URL:</label>
+    <input id="imageUrl" type="url" placeholder="ჩასვი სურათის URL">
+    <p id="message" aria-live="polite"></p>
   </main>
-
-  <footer class="footer">© 2026 Optimize</footer>
 </body>
 </html>
