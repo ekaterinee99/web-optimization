@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A small book collection. Search, filter and save your favourite reads.">
+<title>BookNest | Find a book</title>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#">booknest</a>
+  <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav"><a href="#books">Books</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#books">Favourites <span id="favourite-count">0</span></a></nav>
+</header>
+<main>
+  <section class="hero">
+    <div><p class="eyebrow">A simple place for readers</p><h1>Find your next<br><em>good read.</em></h1>
+    <p class="intro">Browse a few book picks, search by title or author, and save the ones you like.</p>
+    <a class="button" href="#books">Browse books ↓</a></div>
+    <div class="hero-art" aria-label="Illustration of a few books" role="img"><div class="sun"></div><div class="book book-one"></div><div class="book book-two"></div><div class="book book-three"></div></div>
+  </section>
+  <section id="books" class="section">
+    <div class="section-title"><div><p class="eyebrow">The collection</p><h2>Books to explore</h2></div><p>Four picks to get you started.</p></div>
+    <div class="tools">
+      <input id="search" type="search" placeholder="Search title or author..." aria-label="Search title or author">
+      <select id="genre" aria-label="Filter by genre"><option value="all">All genres</option><option>Classic</option><option>Fantasy</option><option>Non-fiction</option></select>
+    </div>
+    <div class="chips"><button class="chip active" data-genre="all">All books</button><button class="chip" data-genre="Classic">Classics</button><button class="chip" data-genre="Fantasy">Fantasy</button><button class="chip" data-genre="Non-fiction">Non-fiction</button></div>
+    <p id="status" class="status" aria-live="polite"></p>
+    <div id="book-grid" class="book-grid"></div>
+    <div id="empty" class="empty" hidden><h3>No books found</h3><p>Try another search or genre.</p><button id="reset" class="button">Reset filters</button></div>
+  </section>
+  <section id="about" class="about"><div><p class="eyebrow">About BookNest</p><h2>Make time for a story.</h2><p>BookNest is a small book discovery page made to practise HTML, CSS and JavaScript. Search the collection and save books to your favourites.</p></div></section>
+  <section id="contact" class="section contact">
+    <div><p class="eyebrow">Get in touch</p><h2>What do you like to read?</h2><p>Leave a note about the books you enjoy.</p></div>
+    <form id="contact-form" novalidate>
+      <label for="name">Your name</label><input id="name" name="name" required minlength="2" placeholder="Your name">
+      <label for="email">Email address</label><input id="email" name="email" type="email" required placeholder="you@example.com">
+      <label for="message">Message</label><textarea id="message" name="message" rows="3" required minlength="5" placeholder="I enjoy reading..."></textarea>
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+      <button class="button" type="submit">Send message →</button>
+      <small>This is a demo form. It checks your entries but does not send them to a server.</small>
+    </form>
+  </section>
+</main>
+<footer><a class="logo" href="#">booknest</a><span>Made for the love of reading.</span><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a></footer>
+</body>
+</html>
